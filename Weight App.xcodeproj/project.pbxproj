@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2EE551D52188A755002F7B88 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE551D42188A755002F7B88 /* ProfileViewController.swift */; };
 		2EF3CC1D21874EA800A8FE85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */; };
 		2EF3CC1F21874EA800A8FE85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1E21874EA800A8FE85 /* ViewController.swift */; };
 		2EF3CC2221874EA800A8FE85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF3CC2021874EA800A8FE85 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EE551D42188A755002F7B88 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2EF3CC1921874EA800A8FE85 /* Weight App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weight App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EF3CC1E21874EA800A8FE85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */,
 				2EF3CC1E21874EA800A8FE85 /* ViewController.swift */,
+				2EE551D42188A755002F7B88 /* ProfileViewController.swift */,
 				2EF3CC2021874EA800A8FE85 /* Main.storyboard */,
 				2EF3CC2621874EA900A8FE85 /* Assets.xcassets */,
 				2EF3CC2821874EA900A8FE85 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				2EF3CC1F21874EA800A8FE85 /* ViewController.swift in Sources */,
 				2EF3CC1D21874EA800A8FE85 /* AppDelegate.swift in Sources */,
+				2EE551D52188A755002F7B88 /* ProfileViewController.swift in Sources */,
 				2EF3CC2521874EA800A8FE85 /* Weight_App.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
