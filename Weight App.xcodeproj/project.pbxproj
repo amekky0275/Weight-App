@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2EA38A4C2189F76300831C8C /* ElishaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA38A4B2189F76300831C8C /* ElishaViewController.swift */; };
-		2EA38A4E2189F78700831C8C /* AdamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA38A4D2189F78700831C8C /* AdamViewController.swift */; };
-		2EA38A502189F79100831C8C /* KateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA38A4F2189F79100831C8C /* KateViewController.swift */; };
 		2EE551D52188A755002F7B88 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE551D42188A755002F7B88 /* ProfileViewController.swift */; };
 		2EF3CC1D21874EA800A8FE85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */; };
 		2EF3CC1F21874EA800A8FE85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1E21874EA800A8FE85 /* ViewController.swift */; };
@@ -20,9 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2EA38A4B2189F76300831C8C /* ElishaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElishaViewController.swift; sourceTree = "<group>"; };
-		2EA38A4D2189F78700831C8C /* AdamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdamViewController.swift; sourceTree = "<group>"; };
-		2EA38A4F2189F79100831C8C /* KateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KateViewController.swift; sourceTree = "<group>"; };
 		2EE551D42188A755002F7B88 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2EF3CC1921874EA800A8FE85 /* Weight App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weight App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,9 +61,6 @@
 				2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */,
 				2EF3CC1E21874EA800A8FE85 /* ViewController.swift */,
 				2EE551D42188A755002F7B88 /* ProfileViewController.swift */,
-				2EA38A4B2189F76300831C8C /* ElishaViewController.swift */,
-				2EA38A4D2189F78700831C8C /* AdamViewController.swift */,
-				2EA38A4F2189F79100831C8C /* KateViewController.swift */,
 				2EF3CC2021874EA800A8FE85 /* Main.storyboard */,
 				2EF3CC2621874EA900A8FE85 /* Assets.xcassets */,
 				2EF3CC2821874EA900A8FE85 /* LaunchScreen.storyboard */,
@@ -152,11 +143,8 @@
 			files = (
 				2EF3CC1F21874EA800A8FE85 /* ViewController.swift in Sources */,
 				2EF3CC1D21874EA800A8FE85 /* AppDelegate.swift in Sources */,
-				2EA38A4C2189F76300831C8C /* ElishaViewController.swift in Sources */,
 				2EE551D52188A755002F7B88 /* ProfileViewController.swift in Sources */,
-				2EA38A502189F79100831C8C /* KateViewController.swift in Sources */,
 				2EF3CC2521874EA800A8FE85 /* Weight_App.xcdatamodeld in Sources */,
-				2EA38A4E2189F78700831C8C /* AdamViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
