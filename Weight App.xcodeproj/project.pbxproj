@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0CF9E9218B459800148F13 /* ElishaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CF9E8218B459800148F13 /* ElishaViewController.swift */; };
+		2E0CF9EB218B45AD00148F13 /* MekkyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CF9EA218B45AD00148F13 /* MekkyViewController.swift */; };
+		2E0CF9ED218B45BA00148F13 /* KateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CF9EC218B45BA00148F13 /* KateViewController.swift */; };
 		2EE551D52188A755002F7B88 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE551D42188A755002F7B88 /* ProfileViewController.swift */; };
 		2EF3CC1D21874EA800A8FE85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */; };
 		2EF3CC1F21874EA800A8FE85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1E21874EA800A8FE85 /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E0CF9E8218B459800148F13 /* ElishaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElishaViewController.swift; sourceTree = "<group>"; };
+		2E0CF9EA218B45AD00148F13 /* MekkyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MekkyViewController.swift; sourceTree = "<group>"; };
+		2E0CF9EC218B45BA00148F13 /* KateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KateViewController.swift; sourceTree = "<group>"; };
 		2EE551D42188A755002F7B88 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2EF3CC1921874EA800A8FE85 /* Weight App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weight App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 			children = (
 				2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */,
 				2EF3CC1E21874EA800A8FE85 /* ViewController.swift */,
+				2E0CF9E8218B459800148F13 /* ElishaViewController.swift */,
+				2E0CF9EA218B45AD00148F13 /* MekkyViewController.swift */,
+				2E0CF9EC218B45BA00148F13 /* KateViewController.swift */,
 				2EE551D42188A755002F7B88 /* ProfileViewController.swift */,
 				2EF3CC2021874EA800A8FE85 /* Main.storyboard */,
 				2EF3CC2621874EA900A8FE85 /* Assets.xcassets */,
@@ -142,7 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EF3CC1F21874EA800A8FE85 /* ViewController.swift in Sources */,
+				2E0CF9E9218B459800148F13 /* ElishaViewController.swift in Sources */,
+				2E0CF9EB218B45AD00148F13 /* MekkyViewController.swift in Sources */,
 				2EF3CC1D21874EA800A8FE85 /* AppDelegate.swift in Sources */,
+				2E0CF9ED218B45BA00148F13 /* KateViewController.swift in Sources */,
 				2EE551D52188A755002F7B88 /* ProfileViewController.swift in Sources */,
 				2EF3CC2521874EA800A8FE85 /* Weight_App.xcdatamodeld in Sources */,
 			);
