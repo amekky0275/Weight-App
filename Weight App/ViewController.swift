@@ -10,15 +10,17 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var master = [String]()
-
+    var master = [String : [String: [String: [String: Any]]]]()
+    var poopy = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return master.count
+        return poopy.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -12,13 +12,16 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
-    let oneRepMax = [String: Int]()
+    var oneRepMax = [[String: Any]]()
     
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        
+        ormSetUp()
+        
+        tableView.reloadData()
     }
     
     
@@ -29,8 +32,27 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
         let index = indexPath.row
+        let ormIndex = oneRepMax[index]
+        cell.textLabel?.text = ormIndex["name"] as! String
+        let ONE = ormIndex["orm"] as! Int
+        cell.detailTextLabel?.text = String(ONE)
         return cell
     }
     
+    func parse(json: [String: Any])
+    {
+        for i in json
+        {
+            
+        }
+    }
+    
+    func ormSetUp()
+    {
+        let a = ["name": "Bench", "orm": 0] as [String : Any]
+        oneRepMax.append(a)
+        let b = ["name": "Squat", "orm": 0] as [String: Any]
+        oneRepMax.append(b)
+    }
 
 }
