@@ -34,8 +34,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let index = indexPath.row
         let ormIndex = oneRepMax[index]
         cell.textLabel?.text = ormIndex["name"] as! String
-        let ONE = ormIndex["orm"] as! Int
-        cell.detailTextLabel?.text = String(ONE)
+        cell.detailTextLabel?.text = String(ormIndex["orm"] as! Int)
         return cell
     }
     
