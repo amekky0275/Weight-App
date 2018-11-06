@@ -10,9 +10,11 @@ import UIKit
 
 class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var TTTTtext = String()
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var oneRepMax = [[String: Any]]()
+    var oneRepMax = [[String: String]]()
     
 
     override func viewDidLoad()
@@ -21,6 +23,10 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         ormSetUp()
         
+        tableView.reloadData()
+    }
+    
+    @IBAction func refreshButton(_ sender: UIBarButtonItem) {
         tableView.reloadData()
     }
     
@@ -33,24 +39,41 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
         let index = indexPath.row
         let ormIndex = oneRepMax[index]
-        cell.textLabel?.text = ormIndex["name"] as! String
-        cell.detailTextLabel?.text = String(ormIndex["orm"] as! Int)
+        cell.textLabel?.text = ormIndex["name"]
+        cell.detailTextLabel?.text = ormIndex["orm"]
         return cell
     }
     
-    func parse(json: [String: Any])
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPath: Int = indexPath.row
+        oneRepMax[indexPath]["orm"] = alert(lift: oneRepMax[indexPath]["name"]!)
+        print(oneRepMax)
+        tableView.reloadData()
+    }
+    
+    func alert(lift: String) -> String
     {
-        for i in json
-        {
-            
+        var ORM = ""
+        let alert = UIAlertController(title: "What's your one rep max for \(lift)?", message: nil, preferredStyle: .alert)
+        alert.addTextField { (AlertTextField) in
+            AlertTextField.keyboardType = UIKeyboardType.numberPad
         }
+        let confirm = UIAlertAction(title: "Ok", style: .default){ (UIAlertAction) in
+            let alertTextField = alert.textFields![0] as UITextField
+            ORM = alertTextField.text!
+            }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(confirm)
+        alert.addAction(cancel)
+        present(alert, animated: false, completion: nil)
+        return ORM
     }
     
     func ormSetUp()
     {
-        let a = ["name": "Bench", "orm": 0] as [String : Any]
+        let a = ["name": "Bench", "orm": "0"]
         oneRepMax.append(a)
-        let b = ["name": "Squat", "orm": 0] as [String: Any]
+        let b = ["name": "Squat", "orm": "0"]
         oneRepMax.append(b)
     }
 
