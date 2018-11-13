@@ -10,18 +10,36 @@ import UIKit
 
 class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var TVindexPatH = Int()
+    
     var TTTTtext = String()
     
     @IBOutlet weak var tableView: UITableView!
     
     var oneRepMax = [[String: String]]()
+    var numArray = [Int]()
     
+    var alertTextField = UITextField()
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        ormSetUp()
+        let a = ["name": "Bench", "orm": "0", "pos" : "0"]
+        oneRepMax.append(a)
+        let b = ["name": "Squat", "orm": "0", "pos" : "1"]
+        oneRepMax.append(b)
+        
+        var counter = 0
+        while counter < 84
+        {
+            numArray.append(counter)
+            counter += 1
+            print(counter)
+            print(numArray)
+        }
+        
+        fixTheArray()
         
         tableView.reloadData()
     }
@@ -45,36 +63,74 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath: Int = indexPath.row
-        oneRepMax[indexPath]["orm"] = alert(lift: oneRepMax[indexPath]["name"]!)
-        print(oneRepMax)
-        tableView.reloadData()
+        TVindexPatH = indexPath.row
+        alert(lift: oneRepMax[TVindexPatH]["name"]!)
+        
+//        let newNum = alert(lift: index["name"]!)
+//        if (index.updateValue(alert(lift: index["name"]!), forKey: "orm") != nil)
+//        {
+//            print("------------------------------------IT WORKED")
+//        }
+//        print(oneRepMax)
+//        tableView.reloadData()
+        
+        
     }
     
-    func alert(lift: String) -> String
+    func changeItUp(index: [String: String])
     {
-        var ORM = ""
+        
+    }
+    
+    func alert(lift: String)
+    {
+        var ORM = String()
         let alert = UIAlertController(title: "What's your one rep max for \(lift)?", message: nil, preferredStyle: .alert)
         alert.addTextField { (AlertTextField) in
             AlertTextField.keyboardType = UIKeyboardType.numberPad
+            self.alertTextField = alert.textFields![0] as UITextField
         }
         let confirm = UIAlertAction(title: "Ok", style: .default){ (UIAlertAction) in
-            let alertTextField = alert.textFields![0] as UITextField
-            ORM = alertTextField.text!
+            ORM = self.alertTextField.text!
+            var index = self.oneRepMax[self.TVindexPatH]
+            var updatedIndex = self.TVindexPatH - 1
+            self.oneRepMax.remove(at: self.TVindexPatH)
+            self.oneRepMax.append( [ "name": index["name"]!, "orm": ORM , "pos" : "\(index["pos"] ?? "BROKEN BROKEN BROKEN")"])
+            self.tableView.reloadData()
+
             }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(confirm)
         alert.addAction(cancel)
         present(alert, animated: false, completion: nil)
-        return ORM
+        
     }
     
-    func ormSetUp()
+    func fixTheArray()
     {
-        let a = ["name": "Bench", "orm": "0"]
-        oneRepMax.append(a)
-        let b = ["name": "Squat", "orm": "0"]
-        oneRepMax.append(b)
+        var oneRepMaxCopy = [[String: String]]()
+        for i in oneRepMax
+        {
+            oneRepMaxCopy.append(i)
+        }
+        oneRepMax.removeAll()
+        for i in oneRepMaxCopy
+        {
+            for ii in numArray
+            {
+                if i["pos"] == "\(ii)"
+                {
+                    oneRepMax.append(i)
+                } else if i["pos"] == "BROKEN BROKEN BROKEN" {
+                    print("BROKEN")
+                }
+            }
+        }
+        
+        print(oneRepMax)
     }
 
+    
+    
+    
 }

@@ -131,7 +131,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ap3-FF-uJ8">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="IHv-7x-exi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="IHv-7x-exi">
                             <connections>
                                 <action selector="refreshButton:" destination="bHa-DS-UtD" id="TYp-FI-RGC"/>
                             </connections>
