@@ -10,22 +10,89 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var master = [String : [String: [String: [String: Any]]]]()
-    var poopy = [String]()
+    @IBOutlet weak var tableView: UITableView!
     
+    var position = 0
+    
+    var defaults = UserDefaults.standard
+    
+    var master = [String : [String: [String: [String: Any]]]]()
+    
+    
+    var activeLiftsKey = String()
+    var activeLifts = [String]()
+    {
+        didSet{
+            defaults.set(activeLifts, forKey: activeLiftsKey)
+        }
+    }
+    
+    var boySportsKey = String()
+    var boySports = [String]()
+    {
+        didSet{
+            defaults.set(boySports, forKey: boySportsKey)
+        }
+    }
+    
+    var girlSportsKey = String()
+    var girlSports = [String]()
+    {
+        didSet{
+            defaults.set(girlSports, forKey: girlSportsKey)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let saveData = defaults.object(forKey: activeLiftsKey) as? [String]
+        {
+            activeLifts = saveData
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        boySports = ["Cross Country", "Soccer", "Football", "Golf", "Basketball", "Swimming/Diving", "Wrestling", "Cheerleading", "Baseball", "Gymnastics", "Tennis", "Track", "Volleyball", "Water Polo"]
+        girlSports = ["Cross Country", "Swimming/Diving", "Golf", "Tennis", "Volleyball", "Basketball", "Bowling", "Gymnastics", "Badminton", "Soccer", "Softball", "Track", "Water Polo"]
         
     }
-
+    
+    @IBAction func boyGirlCycle(_ sender: UIBarButtonItem) {
+        if position == 0
+        {
+            activeLifts.removeAll()
+            for i in boySports
+            {
+                activeLifts.append(i)
+            }
+            position = 1
+            tableView.reloadData()
+            self.title = "Boys Lifts"
+            sender.title = "Girls"
+            sender.tintColor = UIColor.magenta
+        }else if position == 1{
+            activeLifts.removeAll()
+            for i in girlSports
+            {
+                activeLifts.append(i)
+            }
+            position = 0
+            tableView.reloadData()
+            self.title = "Girls Lifts"
+            sender.title = "Boys"
+            sender.tintColor = UIColor.blue
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return poopy.count
+        return activeLifts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let index = indexPath.row
+        cell.textLabel!.text = activeLifts[index]
+        cell.detailTextLabel!.text = ""
         return cell
     }
 

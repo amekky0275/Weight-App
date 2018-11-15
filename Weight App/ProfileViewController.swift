@@ -10,13 +10,24 @@ import UIKit
 
 class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var defaults = UserDefaults.standard
+    
     var TVindexPatH = Int()
     
     var TTTTtext = String()
     
     @IBOutlet weak var tableView: UITableView!
     
-    var oneRepMax = [[String: String]]()
+    var saveVar = String()
+    var oneRepMax = [[String: Any]]()
+    {
+        didSet{
+            defaults.set(oneRepMax, forKey: saveVar)
+        }
+    }
+    
+    let nameArr = ["Bench", "Squat", "Dead Lift", "Hang Clean", "Power Clean"]
+    
     var numArray = [Int]()
     
     var alertTextField = UITextField()
@@ -25,10 +36,17 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     {
         super.viewDidLoad()
         
-        let a = ["name": "Bench", "orm": "0", "pos" : "0"]
+        let a = ["name": "Bench", "orm": "0", "pos" : 0] as [String : Any]
         oneRepMax.append(a)
-        let b = ["name": "Squat", "orm": "0", "pos" : "1"]
+        let b = ["name": "Squat", "orm": "0", "pos" : 1] as [String : Any]
         oneRepMax.append(b)
+        let c = ["name": "Dead Lift", "orm": "0", "pos" : 2] as [String : Any]
+        oneRepMax.append(c)
+        let d = ["name": "Hang Clean", "orm": "0", "pos" : 3] as [String : Any]
+        oneRepMax.append(d)
+        let e = ["name": "Power Clean", "orm": "0", "pos" : 4 ] as [String : Any]
+        oneRepMax.append(e)
+        
         
         var counter = 0
         while counter < 84
@@ -44,6 +62,13 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tableView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let saveData = defaults.object(forKey: saveVar) as? [[String: String]]
+        {
+            oneRepMax = saveData
+        }
+    }
+    
     @IBAction func refreshButton(_ sender: UIBarButtonItem) {
         tableView.reloadData()
     }
@@ -57,14 +82,14 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
         let index = indexPath.row
         let ormIndex = oneRepMax[index]
-        cell.textLabel?.text = ormIndex["name"]
-        cell.detailTextLabel?.text = ormIndex["orm"]
+        cell.textLabel?.text = ormIndex["name"] as! String
+        cell.detailTextLabel?.text = ormIndex["orm"] as! String
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         TVindexPatH = indexPath.row
-        alert(lift: oneRepMax[TVindexPatH]["name"]!)
+        alert(lift: oneRepMax[TVindexPatH]["name"]! as! String)
         
 //        let newNum = alert(lift: index["name"]!)
 //        if (index.updateValue(alert(lift: index["name"]!), forKey: "orm") != nil)
@@ -94,8 +119,9 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             ORM = self.alertTextField.text!
             var index = self.oneRepMax[self.TVindexPatH]
             var updatedIndex = self.TVindexPatH - 1
-            self.oneRepMax.remove(at: self.TVindexPatH)
-            self.oneRepMax.append( [ "name": index["name"]!, "orm": ORM , "pos" : "\(index["pos"] ?? "BROKEN BROKEN BROKEN")"])
+            self.oneRepMax.remove(at: index["pos"] as! Int)
+            self.oneRepMax.insert([ "name": index["name"]!, "orm": ORM , "pos" : index["pos"] as! Int], at: index["pos"] as! Int)
+        
             self.tableView.reloadData()
 
             }
@@ -108,7 +134,7 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     func fixTheArray()
     {
-        var oneRepMaxCopy = [[String: String]]()
+        var oneRepMaxCopy = [[String: Any]]()
         for i in oneRepMax
         {
             oneRepMaxCopy.append(i)
@@ -118,11 +144,9 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         {
             for ii in numArray
             {
-                if i["pos"] == "\(ii)"
+                if i["pos"] as! Int == ii
                 {
                     oneRepMax.append(i)
-                } else if i["pos"] == "BROKEN BROKEN BROKEN" {
-                    print("BROKEN")
                 }
             }
         }
