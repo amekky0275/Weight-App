@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var switcher: UIBarButtonItem!
+    
     var position = 0
     
     var defaults = UserDefaults.standard
@@ -54,6 +56,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         boySports = ["Cross Country", "Soccer", "Football", "Golf", "Basketball", "Swimming/Diving", "Wrestling", "Cheerleading", "Baseball", "Gymnastics", "Tennis", "Track", "Volleyball", "Water Polo"]
         girlSports = ["Cross Country", "Swimming/Diving", "Golf", "Tennis", "Volleyball", "Basketball", "Bowling", "Gymnastics", "Badminton", "Soccer", "Softball", "Track", "Water Polo"]
+        switcher.title = "Girls"
+        switcher.tintColor = UIColor.magenta
+        self.title = "Boys Lifts"
+
         
     }
     
@@ -96,6 +102,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
 
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! LiftViewController
+        let index = tableView.indexPathForSelectedRow?.row
+        vc.sport = activeLifts[index!]
+    }
+    
 }
 
