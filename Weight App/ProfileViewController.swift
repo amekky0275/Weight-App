@@ -10,6 +10,9 @@ import UIKit
 
 class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    // 0 = girls, 1 = boys
+    var gender = Int()
+    
     var defaults = UserDefaults.standard
     
     var TVindexPatH = Int()

@@ -13,6 +13,8 @@ class LiftViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
+    // 0 = lift, 1 = profile
+    var active = Int()
     
     var sport = String()
     

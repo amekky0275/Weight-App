@@ -14,9 +14,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var switcher: UIBarButtonItem!
     
+    var transition = 0
+    
     var position = 0
     
     var defaults = UserDefaults.standard
+    
+    var to = 0
     
     var master = [String : [String: [String: [String: Any]]]]()
     
@@ -63,6 +67,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    @IBAction func profileButton(_ sender: UIBarButtonItem) {
+    to = 1
+    }
+    
     @IBAction func boyGirlCycle(_ sender: UIBarButtonItem) {
         if position == 0
         {
@@ -102,11 +110,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
         let vc = segue.destination as! LiftViewController
-        let index = tableView.indexPathForSelectedRow?.row
-        vc.sport = activeLifts[index!]
+        if to == 1
+        {
+            vc.active = 1
+        }else{
+            let index = tableView.indexPathForSelectedRow?.row
+            vc.sport = activeLifts[index!]
+        }
+        
     }
-    
 }
 
