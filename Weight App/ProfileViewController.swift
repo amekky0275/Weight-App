@@ -39,28 +39,23 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
     {
         super.viewDidLoad()
         
-        let a = ["name": "Bench", "orm": "0", "pos" : 0] as [String : Any]
+        let a = ["name": "Bench", "orm": "0"] as [String : Any]
         oneRepMax.append(a)
-        let b = ["name": "Squat", "orm": "0", "pos" : 1] as [String : Any]
+        let b = ["name": "Squat", "orm": "0"] as [String : Any]
         oneRepMax.append(b)
-        let c = ["name": "Dead Lift", "orm": "0", "pos" : 2] as [String : Any]
+        let c = ["name": "Dead Lift", "orm": "0"] as [String : Any]
         oneRepMax.append(c)
-        let d = ["name": "Hang Clean", "orm": "0", "pos" : 3] as [String : Any]
+        let d = ["name": "Hang Clean", "orm": "0"] as [String : Any]
         oneRepMax.append(d)
-        let e = ["name": "Power Clean", "orm": "0", "pos" : 4 ] as [String : Any]
+        let e = ["name": "Power Clean", "orm": "0"] as [String : Any]
         oneRepMax.append(e)
-        
         
         var counter = 0
         while counter < 84
         {
             numArray.append(counter)
             counter += 1
-            print(counter)
-            print(numArray)
         }
-        
-        fixTheArray()
         
         tableView.reloadData()
     }
@@ -126,6 +121,9 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             self.oneRepMax.insert([ "name": index["name"]!, "orm": ORM , "pos" : index["pos"] as! Int], at: index["pos"] as! Int)
         
             self.tableView.reloadData()
+            
+            print(self.oneRepMax)
+
 
             }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -134,30 +132,4 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         present(alert, animated: false, completion: nil)
         
     }
-    
-    func fixTheArray()
-    {
-        var oneRepMaxCopy = [[String: Any]]()
-        for i in oneRepMax
-        {
-            oneRepMaxCopy.append(i)
-        }
-        oneRepMax.removeAll()
-        for i in oneRepMaxCopy
-        {
-            for ii in numArray
-            {
-                if i["pos"] as! Int == ii
-                {
-                    oneRepMax.append(i)
-                }
-            }
-        }
-        
-        print(oneRepMax)
-    }
-
-    
-    
-    
 }

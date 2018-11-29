@@ -58,7 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        boySports = ["Cross Country", "Soccer", "Football", "Golf", "Basketball", "Swimming/Diving", "Wrestling", "Cheerleading", "Baseball", "Gymnastics", "Tennis", "Track", "Volleyball", "Water Polo"]
+        boySports = ["Baseball", "Basketball", "Cheerleading", "Cross Country", "Football", "Golf", "Gymnastics", "Soccer", "Swimming/Diving", "Tennis", "Track", "Water Polo", "Wrestling"]
         girlSports = ["Cross Country", "Swimming/Diving", "Golf", "Tennis", "Volleyball", "Basketball", "Bowling", "Gymnastics", "Badminton", "Soccer", "Softball", "Track", "Water Polo"]
         switcher.title = "Girls"
         switcher.tintColor = UIColor.magenta
@@ -72,25 +72,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @IBAction func boyGirlCycle(_ sender: UIBarButtonItem) {
-        if position == 0
+        if position == 1
         {
             activeLifts.removeAll()
             for i in boySports
             {
                 activeLifts.append(i)
             }
-            position = 1
+            position = 0
             tableView.reloadData()
             self.title = "Boys Lifts"
             sender.title = "Girls"
             sender.tintColor = UIColor.magenta
-        }else if position == 1{
+        }else if position == 0{
             activeLifts.removeAll()
             for i in girlSports
             {
                 activeLifts.append(i)
             }
-            position = 0
+            position = 1
             tableView.reloadData()
             self.title = "Girls Lifts"
             sender.title = "Boys"

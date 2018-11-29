@@ -20,6 +20,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="met-gb-Pzk">
                                 <rect key="frame" x="10" y="130" width="814" height="972"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Lift Cards"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="B4X-F6-AWI"/>
@@ -27,6 +28,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oS5-Ae-a6w">
                                 <rect key="frame" x="10" y="80" width="814" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tKG-9C-b02"/>
                                 </constraints>
@@ -258,7 +260,6 @@
         <!--Navigation Controller-->
         <scene sceneID="cZr-z6-OIL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v5y-N7-6y9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7YA-BE-UWs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MYR-Wt-xv7">
@@ -267,6 +268,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5y-N7-6y9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-671" y="-479"/>
         </scene>

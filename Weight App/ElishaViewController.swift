@@ -9,27 +9,31 @@
 import UIKit
 
 class ElishaViewController: UIViewController {
+    
+    var oneRepMax = [[String: Any]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+//        let a = ["name": "Bench Press", "orm": "0", "url" : <#URL#>] as [String : Any]
+//        oneRepMax.append(a)
+//        let b = ["name": "Squat", "orm": "0", "url" : <#URL#>] as [String : Any]
+//        oneRepMax.append(b)
+//        let c = ["name": "Dead Lift", "orm": "0", "url" : <#URL#>] as [String : Any]
+//        oneRepMax.append(c)
+//        let d = ["name": "Hang Clean", "orm": "0", "url" : <#URL#>] as [String : Any]
+//        oneRepMax.append(d)
+//        let e = ["name": "Power Clean", "orm": "0", "url" : <#URL#>] as [String : Any]
+//        oneRepMax.append(e)
+//        let f = ["name": <#Lift Name#>, "orm": "0", "url" : <#URL#>] as [String : Any]
+        
+        
+        
+        
+        
+        
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+        
 }
