@@ -18,6 +18,7 @@
 		2EF3CC2521874EA800A8FE85 /* Weight_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC2321874EA800A8FE85 /* Weight_App.xcdatamodeld */; };
 		2EF3CC2721874EA900A8FE85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EF3CC2621874EA900A8FE85 /* Assets.xcassets */; };
 		2EF3CC2A21874EA900A8FE85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EF3CC2821874EA900A8FE85 /* LaunchScreen.storyboard */; };
+		D9440D3EE3DD14567483E57D /* Pods_Weight_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499732885350F81DC705680A /* Pods_Weight_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,9 @@
 		2EF3CC2621874EA900A8FE85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EF3CC2921874EA900A8FE85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EF3CC2B21874EA900A8FE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		499732885350F81DC705680A /* Pods_Weight_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weight_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F3F0D4558E09CD73331D2B /* Pods-Weight App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weight App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weight App/Pods-Weight App.debug.xcconfig"; sourceTree = "<group>"; };
+		E412DA111A08FA924C5D533D /* Pods-Weight App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weight App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weight App/Pods-Weight App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +45,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9440D3EE3DD14567483E57D /* Pods_Weight_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0E5B0846D02BDF3E34DC39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				49F3F0D4558E09CD73331D2B /* Pods-Weight App.debug.xcconfig */,
+				E412DA111A08FA924C5D533D /* Pods-Weight App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2EF3CC1021874EA800A8FE85 = {
 			isa = PBXGroup;
 			children = (
 				2EF3CC1B21874EA800A8FE85 /* Weight App */,
 				2EF3CC1A21874EA800A8FE85 /* Products */,
+				1D0E5B0846D02BDF3E34DC39 /* Pods */,
+				725F9E0B259C8CBE5950B6B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +98,14 @@
 			path = "Weight App";
 			sourceTree = "<group>";
 		};
+		725F9E0B259C8CBE5950B6B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				499732885350F81DC705680A /* Pods_Weight_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,6 +113,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EF3CC2E21874EA900A8FE85 /* Build configuration list for PBXNativeTarget "Weight App" */;
 			buildPhases = (
+				C1459083EA71458F70AC2051 /* [CP] Check Pods Manifest.lock */,
 				2EF3CC1521874EA800A8FE85 /* Sources */,
 				2EF3CC1621874EA800A8FE85 /* Frameworks */,
 				2EF3CC1721874EA800A8FE85 /* Resources */,
@@ -147,6 +172,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C1459083EA71458F70AC2051 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Weight App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2EF3CC1521874EA800A8FE85 /* Sources */ = {
@@ -302,6 +352,7 @@
 		};
 		2EF3CC2F21874EA900A8FE85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49F3F0D4558E09CD73331D2B /* Pods-Weight App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +370,7 @@
 		};
 		2EF3CC3021874EA900A8FE85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E412DA111A08FA924C5D533D /* Pods-Weight App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

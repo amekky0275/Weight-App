@@ -117,8 +117,9 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             ORM = self.alertTextField.text!
             var index = self.oneRepMax[self.TVindexPatH]
             var updatedIndex = self.TVindexPatH - 1
-            self.oneRepMax.remove(at: index["pos"] as! Int)
-            self.oneRepMax.insert([ "name": index["name"]!, "orm": ORM , "pos" : index["pos"] as! Int], at: index["pos"] as! Int)
+            self.oneRepMax.remove(at: self.TVindexPatH)
+
+            self.oneRepMax.insert(["name": index["name"]!, "orm": ORM], at: self.TVindexPatH)
         
             self.tableView.reloadData()
             
