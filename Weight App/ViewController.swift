@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     var boySportsKey = String()
-    var boySports = [String]()
+    var boySports = ["Baseball", "Basketball", "Cheerleading", "Cross Country", "Football", "Golf", "Gymnastics", "Soccer", "Swimming/Diving", "Tennis", "Track", "Water Polo", "Wrestling"]
     {
         didSet{
             defaults.set(boySports, forKey: boySportsKey)
@@ -42,7 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     var girlSportsKey = String()
-    var girlSports = [String]()
+    var girlSports = ["Cross Country", "Swimming/Diving", "Golf", "Tennis", "Volleyball", "Basketball", "Bowling", "Gymnastics", "Badminton", "Soccer", "Softball", "Track", "Water Polo"]
     {
         didSet{
             defaults.set(girlSports, forKey: girlSportsKey)
@@ -58,8 +58,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        boySports = ["Baseball", "Basketball", "Cheerleading", "Cross Country", "Football", "Golf", "Gymnastics", "Soccer", "Swimming/Diving", "Tennis", "Track", "Water Polo", "Wrestling"]
-        girlSports = ["Cross Country", "Swimming/Diving", "Golf", "Tennis", "Volleyball", "Basketball", "Bowling", "Gymnastics", "Badminton", "Soccer", "Softball", "Track", "Water Polo"]
         switcher.title = "Girls"
         switcher.tintColor = UIColor.magenta
         self.title = "Boys Lifts"
@@ -67,9 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    @IBAction func profileButton(_ sender: UIBarButtonItem) {
-    to = 1
-    }
+
     
     @IBAction func boyGirlCycle(_ sender: UIBarButtonItem) {
         if position == 1
