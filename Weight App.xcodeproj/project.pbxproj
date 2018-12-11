@@ -11,6 +11,7 @@
 		2E0CF9EB218B45AD00148F13 /* MekkyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CF9EA218B45AD00148F13 /* MekkyViewController.swift */; };
 		2E0CF9ED218B45BA00148F13 /* KateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CF9EC218B45BA00148F13 /* KateViewController.swift */; };
 		2E280DD5219DD40C000A5562 /* LiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E280DD4219DD40C000A5562 /* LiftViewController.swift */; };
+		2E36488221C00EB900440D7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E36488121C00EB900440D7E /* GoogleService-Info.plist */; };
 		2EE551D52188A755002F7B88 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE551D42188A755002F7B88 /* ProfileViewController.swift */; };
 		2EF3CC1D21874EA800A8FE85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */; };
 		2EF3CC1F21874EA800A8FE85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1E21874EA800A8FE85 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		2E0CF9EA218B45AD00148F13 /* MekkyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MekkyViewController.swift; sourceTree = "<group>"; };
 		2E0CF9EC218B45BA00148F13 /* KateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KateViewController.swift; sourceTree = "<group>"; };
 		2E280DD4219DD40C000A5562 /* LiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftViewController.swift; sourceTree = "<group>"; };
+		2E36488121C00EB900440D7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2EE551D42188A755002F7B88 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2EF3CC1921874EA800A8FE85 /* Weight App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weight App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				2EF3CC2621874EA900A8FE85 /* Assets.xcassets */,
 				2EF3CC2821874EA900A8FE85 /* LaunchScreen.storyboard */,
 				2EF3CC2B21874EA900A8FE85 /* Info.plist */,
+				2E36488121C00EB900440D7E /* GoogleService-Info.plist */,
 				2EF3CC2321874EA800A8FE85 /* Weight_App.xcdatamodeld */,
 			);
 			path = "Weight App";
@@ -117,6 +120,7 @@
 				2EF3CC1521874EA800A8FE85 /* Sources */,
 				2EF3CC1621874EA800A8FE85 /* Frameworks */,
 				2EF3CC1721874EA800A8FE85 /* Resources */,
+				1B69A6C48263E02620C37C72 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EF3CC2A21874EA900A8FE85 /* LaunchScreen.storyboard in Resources */,
+				2E36488221C00EB900440D7E /* GoogleService-Info.plist in Resources */,
 				2EF3CC2721874EA900A8FE85 /* Assets.xcassets in Resources */,
 				2EF3CC2221874EA800A8FE85 /* Main.storyboard in Resources */,
 			);
@@ -174,6 +179,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1B69A6C48263E02620C37C72 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Weight App/Pods-Weight App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weight App/Pods-Weight App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C1459083EA71458F70AC2051 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

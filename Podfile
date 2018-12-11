@@ -6,5 +6,5 @@ target 'Weight App' do
   use_frameworks!
 
   # Pods for Weight App
-pod 'Firebase/Core'
+	pod 'Firebase/Core'
 end
