@@ -12,6 +12,9 @@
 		2E0CF9ED218B45BA00148F13 /* KateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CF9EC218B45BA00148F13 /* KateViewController.swift */; };
 		2E280DD5219DD40C000A5562 /* LiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E280DD4219DD40C000A5562 /* LiftViewController.swift */; };
 		2E36488221C00EB900440D7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E36488121C00EB900440D7E /* GoogleService-Info.plist */; };
+		2E6C800B21C15D2000228750 /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C800A21C15D2000228750 /* OpeningViewController.swift */; };
+		2E6C800D21C15F6800228750 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C800C21C15F6800228750 /* SettingsViewController.swift */; };
+		2E6C800F21C1602E00228750 /* CardMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6C800E21C1602E00228750 /* CardMakeViewController.swift */; };
 		2EE551D52188A755002F7B88 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE551D42188A755002F7B88 /* ProfileViewController.swift */; };
 		2EF3CC1D21874EA800A8FE85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */; };
 		2EF3CC1F21874EA800A8FE85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF3CC1E21874EA800A8FE85 /* ViewController.swift */; };
@@ -28,6 +31,9 @@
 		2E0CF9EC218B45BA00148F13 /* KateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KateViewController.swift; sourceTree = "<group>"; };
 		2E280DD4219DD40C000A5562 /* LiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiftViewController.swift; sourceTree = "<group>"; };
 		2E36488121C00EB900440D7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2E6C800A21C15D2000228750 /* OpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
+		2E6C800C21C15F6800228750 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2E6C800E21C1602E00228750 /* CardMakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMakeViewController.swift; sourceTree = "<group>"; };
 		2EE551D42188A755002F7B88 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2EF3CC1921874EA800A8FE85 /* Weight App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weight App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,13 +91,16 @@
 			isa = PBXGroup;
 			children = (
 				2EF3CC1C21874EA800A8FE85 /* AppDelegate.swift */,
+				2E6C800A21C15D2000228750 /* OpeningViewController.swift */,
 				2EF3CC1E21874EA800A8FE85 /* ViewController.swift */,
 				2E280DD4219DD40C000A5562 /* LiftViewController.swift */,
 				2EE551D42188A755002F7B88 /* ProfileViewController.swift */,
+				2E6C800C21C15F6800228750 /* SettingsViewController.swift */,
+				2E6C800E21C1602E00228750 /* CardMakeViewController.swift */,
+				2EF3CC2021874EA800A8FE85 /* Main.storyboard */,
 				2E0CF9E8218B459800148F13 /* ElishaViewController.swift */,
 				2E0CF9EA218B45AD00148F13 /* MekkyViewController.swift */,
 				2E0CF9EC218B45BA00148F13 /* KateViewController.swift */,
-				2EF3CC2021874EA800A8FE85 /* Main.storyboard */,
 				2EF3CC2621874EA900A8FE85 /* Assets.xcassets */,
 				2EF3CC2821874EA900A8FE85 /* LaunchScreen.storyboard */,
 				2EF3CC2B21874EA900A8FE85 /* Info.plist */,
@@ -189,6 +198,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Weight App/Pods-Weight App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -196,6 +206,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,9 +246,12 @@
 				2EF3CC1F21874EA800A8FE85 /* ViewController.swift in Sources */,
 				2E0CF9E9218B459800148F13 /* ElishaViewController.swift in Sources */,
 				2E0CF9EB218B45AD00148F13 /* MekkyViewController.swift in Sources */,
+				2E6C800D21C15F6800228750 /* SettingsViewController.swift in Sources */,
 				2EF3CC1D21874EA800A8FE85 /* AppDelegate.swift in Sources */,
+				2E6C800B21C15D2000228750 /* OpeningViewController.swift in Sources */,
 				2E0CF9ED218B45BA00148F13 /* KateViewController.swift in Sources */,
 				2EE551D52188A755002F7B88 /* ProfileViewController.swift in Sources */,
+				2E6C800F21C1602E00228750 /* CardMakeViewController.swift in Sources */,
 				2EF3CC2521874EA800A8FE85 /* Weight_App.xcdatamodeld in Sources */,
 				2E280DD5219DD40C000A5562 /* LiftViewController.swift in Sources */,
 			);

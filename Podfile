@@ -7,4 +7,6 @@ target 'Weight App' do
 
   # Pods for Weight App
 	pod 'Firebase/Core'
+	pod 'Firebase/Database'
+	pod 'Firebase/Firestore'
 end

@@ -33,39 +33,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    var boySportsKey = String()
     var boySports = ["Baseball", "Basketball", "Cheerleading", "Cross Country", "Football", "Golf", "Gymnastics", "Soccer", "Swimming/Diving", "Tennis", "Track", "Water Polo", "Wrestling"]
-    {
-        didSet{
-            defaults.set(boySports, forKey: boySportsKey)
-        }
-    }
     
-    var girlSportsKey = String()
+    
     var girlSports = ["Cross Country", "Swimming/Diving", "Golf", "Tennis", "Volleyball", "Basketball", "Bowling", "Gymnastics", "Badminton", "Soccer", "Softball", "Track", "Water Polo"]
-    {
-        didSet{
-            defaults.set(girlSports, forKey: girlSportsKey)
-        }
-    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         if let saveData = defaults.object(forKey: activeLiftsKey) as? [String]
         {
             activeLifts = saveData
         }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        switcher.title = "Girls"
-        switcher.tintColor = UIColor.magenta
+        switcher.title = "flip"
         self.title = "Boys Lifts"
-
+        activeLifts = boySports
         
     }
-    
-
     
     @IBAction func boyGirlCycle(_ sender: UIBarButtonItem) {
         if position == 1
@@ -78,8 +66,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             position = 0
             tableView.reloadData()
             self.title = "Boys Lifts"
-            sender.title = "Girls"
-            sender.tintColor = UIColor.magenta
         }else if position == 0{
             activeLifts.removeAll()
             for i in girlSports
@@ -89,8 +75,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             position = 1
             tableView.reloadData()
             self.title = "Girls Lifts"
-            sender.title = "Boys"
-            sender.tintColor = UIColor.blue
         }
     }
     
@@ -105,18 +89,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.detailTextLabel!.text = ""
         return cell
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         let vc = segue.destination as! LiftViewController
-        if to == 1
-        {
-            vc.active = 1
-        }else{
-            let index = tableView.indexPathForSelectedRow?.row
-            vc.sport = activeLifts[index!]
-        }
-        
+        let index = tableView.indexPathForSelectedRow?.row
+        vc.sport = activeLifts[index!]
     }
 }
 
