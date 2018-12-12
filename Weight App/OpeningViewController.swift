@@ -18,6 +18,8 @@ class OpeningViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("this means nothing delete later")
+        
         loggedIn = defaults.integer(forKey: "loggedIn")
         
         if loggedIn == 0
