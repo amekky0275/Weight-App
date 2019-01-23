@@ -10,6 +10,8 @@ import UIKit
 
 class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    let query = "https://weight-app-b87b2.firebaseio.com/"
+    
     // 0 = girls, 1 = boys
     var gender = Int()
     
@@ -57,6 +59,19 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             counter += 1
         }
         
+        if let url = URL(string: query)
+        {
+            if let data = try? Data(contentsOf: url)
+            {
+                let json = try! JSON(data: data)
+                if json["status"] = working
+                {
+                    
+                }
+                
+            }
+        }
+        
         tableView.reloadData()
     }
     
@@ -65,6 +80,11 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         {
             oneRepMax = saveData
         }
+    }
+    
+    func parse(json: JSON)
+    {
+        
     }
     
     @IBAction func refreshButton(_ sender: UIBarButtonItem) {
@@ -124,7 +144,6 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
             self.tableView.reloadData()
             
             print(self.oneRepMax)
-
 
             }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

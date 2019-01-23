@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E03775021F8C37500A98EF8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E03774F21F8C37500A98EF8 /* SwiftyJSON.swift */; };
 		2E0CF9E9218B459800148F13 /* ElishaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CF9E8218B459800148F13 /* ElishaViewController.swift */; };
 		2E0CF9EB218B45AD00148F13 /* MekkyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CF9EA218B45AD00148F13 /* MekkyViewController.swift */; };
 		2E0CF9ED218B45BA00148F13 /* KateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CF9EC218B45BA00148F13 /* KateViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E03774F21F8C37500A98EF8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		2E0CF9E8218B459800148F13 /* ElishaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElishaViewController.swift; sourceTree = "<group>"; };
 		2E0CF9EA218B45AD00148F13 /* MekkyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MekkyViewController.swift; sourceTree = "<group>"; };
 		2E0CF9EC218B45BA00148F13 /* KateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KateViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				2E0CF9EC218B45BA00148F13 /* KateViewController.swift */,
 				2EF3CC2621874EA900A8FE85 /* Assets.xcassets */,
 				2EF3CC2821874EA900A8FE85 /* LaunchScreen.storyboard */,
+				2E03774F21F8C37500A98EF8 /* SwiftyJSON.swift */,
 				2EF3CC2B21874EA900A8FE85 /* Info.plist */,
 				2E36488121C00EB900440D7E /* GoogleService-Info.plist */,
 				2EF3CC2321874EA800A8FE85 /* Weight_App.xcdatamodeld */,
@@ -254,6 +257,7 @@
 				2E6C800F21C1602E00228750 /* CardMakeViewController.swift in Sources */,
 				2EF3CC2521874EA800A8FE85 /* Weight_App.xcdatamodeld in Sources */,
 				2E280DD5219DD40C000A5562 /* LiftViewController.swift in Sources */,
+				2E03775021F8C37500A98EF8 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
